@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Http\Interfaces\SafeInterface;
-use App\Http\Repositories\SafeRepository;
+use App\Http\Interfaces\StoreInterface;
+use App\Http\Repositories\StoreRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -14,8 +14,8 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(
-             SafeInterface::class,
-             SafeRepository::class
+            StoreInterface::class,
+            StoreRepository::class
         );
     }
 

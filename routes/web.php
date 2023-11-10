@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\SafeController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('',[SafeController::class,'index']);
+
+
+Route::group([
+    'controller'=>StoreController::class,
+    'as'=>'store.'
+],function(){
+    Route::get('','index')->name('index');
+    Route::get('create','create')->name('create');
+    Route::post('store','store')->name('store');
+
+});
+

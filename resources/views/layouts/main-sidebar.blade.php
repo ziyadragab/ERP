@@ -4,13 +4,32 @@
         data-accordion="false">
         <li class="nav-item">
             <a href="" class="nav-link">
-                <i class="nav-icon far fa-calendar-alt"></i>
+                <i class="nav-icon fas fa-shopping-bag"></i> <!-- Change this class to the desired store icon -->
                 <p>
-                    Safes
+                    Stores
                     <span class="badge badge-info right"></span>
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-file-invoice"></i> <!-- Change this class to the desired invoice icon -->
+                <p>
+                    Invoices
+                    <span class="badge badge-info right"></span>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="nav-icon fas fa-user"></i> <!-- Change this class to the desired user icon -->
+                <p>
+                    Employee
+                    <span class="badge badge-info right"></span>
+                </p>
+            </a>
+        </li>
+
     </ul>
 </nav>
 <!-- /.sidebar-menu -->
