@@ -115,7 +115,11 @@
                                         <div class="card-body py-2">
                                             <div class="form-group m-0">
                                                 <label for="exampleInputEmail1">price</label>
-                                                <input type="text" name="title" class="form-control">
+                                                <select class="w-100 " style="height: 37px" id="unit" name="unit">
+                                                    <option value="australia">Kg</option>
+                                                    <option value="canada">box</option>
+                                                    <option value="usa">cardboard</option>
+                                                    </select>
                                             </div>
                                         </div>
                                     </div>
