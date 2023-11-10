@@ -36,7 +36,7 @@
                 <div class="card-body">
 
 
-                    <a href="" class="btn btn-success" role="button" aria-disabled="true">Add Safe</a><br><br>
+                    <a href="{{ route('store.create') }}" class="btn btn-success" role="button" aria-disabled="true">Add Safe</a><br><br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>

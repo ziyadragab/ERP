@@ -54,11 +54,11 @@
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Add New Post</h3>
+                            <h3 class="card-title">Add New Store</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{route('posts.store')}}" method="POST">
+                        <form action="" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
