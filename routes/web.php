@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('',[SafeController::class,'index']);
+Route::get('create',[SafeController::class,'create'])->name('store.create');
+
