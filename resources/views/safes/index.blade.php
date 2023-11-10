@@ -40,21 +40,28 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Title</th>
-                            <th>Body</th>
-                            <th>Created_at</th>
-                            <th>Processes</th>
+                            <th>Item code</th>
+                            <th>Item</th>
+                            <th>description</th>
+                            <th>Type</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                            <th>price</th>
+                            <th>Total</th>
+                            <th>Tax</th>
+                            <th>Total tax</th>
                         </tr>
 
                         </thead>
                         <tbody>
 
                             <tr>
-                                <td>1</td>
-                                <td>title</td>
-                                <td>description</td>
-                                <td>price</td>
+                                <td>1001</td>
+                                <td>zx-240</td>
+                                <td>hold 32-55</td>
+                                <td>screen holder </td>
+                                <td>50</td>
+                                <td></td>
                                 <td>
                                     <a href="" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Edit</a>
                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="">Delete</button>
