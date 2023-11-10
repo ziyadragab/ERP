@@ -15,4 +15,7 @@ class SafeController extends Controller
     public function index(){
         return $this->safeInterface->index();
     }
+    public function create(){
+        return $this->safeInterface->create();
+    }
 }

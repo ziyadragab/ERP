@@ -9,6 +9,10 @@ class SafeRepository implements SafeInterface{
     {
         return view('safes.index');
     }
+    public function create()
+    {
+        return view('safes.create');
+    }
 }
 
 
