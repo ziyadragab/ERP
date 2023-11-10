@@ -12,7 +12,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Safes</h1>
+                            <h1>Stores</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -22,7 +22,7 @@
             <section class="content">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Safe List</h3>
+                    <h3 class="card-title">Stores List</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
@@ -36,7 +36,7 @@
                 <div class="card-body">
 
 
-                    <a href="{{ route('store.create') }}" class="btn btn-success" role="button" aria-disabled="true">Add Safe</a><br><br>
+                    <a href="{{ route('store.create') }}" class="btn btn-success" role="button" aria-disabled="true">Add item</a><br><br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
@@ -47,54 +47,25 @@
                             <th>Quantity</th>
                             <th>Unit</th>
                             <th>price</th>
-                            <th>Total</th>
+                            <th>discount</th>
                             <th>Tax</th>
-                            <th>Total tax</th>
                         </tr>
 
                         </thead>
                         <tbody>
+                        @foreach ( $stores as $store )
+                            
+                            <tr>
+                                <td>{{ $store['item-code'] }}</td>
+                                <td>{{ $store->item }}</td>
+                                <td>{{ $store->description }}</td>
+                                <td>{{ $store->type }}</td>
+                                <td>{{ $store->quantity }}</td>
+                                <td> {{ $store->unit }}</td>
+                                <td>{{ $store->price }}</td>
+                            </tr>
+                            @endforeach
 
-                            <tr>
-                                <td>1001</td>
-                                <td>zx-240</td>
-                                <td>hold 32-55</td>
-                                <td>screen holder </td>
-                                <td>50</td>
-                                <td></td>
-                                <td>
-                                    <a href="" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Edit</a>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>title</td>
-                                <td>description</td>
-                                <td>price</td>
-                                <td>
-                                    <a href="" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Edit</a>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="">Delete</button>
-                                </td>
-                            </tr>  <tr>
-                                <td>1</td>
-                                <td>title</td>
-                                <td>description</td>
-                                <td>price</td>
-                                <td>
-                                    <a href="" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Edit</a>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="">Delete</button>
-                                </td>
-                            </tr>  <tr>
-                                <td>1</td>
-                                <td>title</td>
-                                <td>description</td>
-                                <td>price</td>
-                                <td>
-                                    <a href="" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Edit</a>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="">Delete</button>
-                                </td>
-                            </tr>
 
 
                     </table>

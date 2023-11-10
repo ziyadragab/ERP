@@ -2,9 +2,11 @@
 
 namespace App\Http\Interfaces;
 
-interface SafeInterface{
+interface StoreInterface{
     public function index();
     public function create();
+    public function store($request);
+
 
 }
 
