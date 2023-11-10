@@ -13,6 +13,15 @@
         </li>
         <li class="nav-item">
             <a href="" class="nav-link">
+                <i class="nav-icon fas fa-file-invoice"></i> <!-- Change this class to the desired invoice icon -->
+                <p>
+                    Invoices
+                    <span class="badge badge-info right"></span>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">
                 <i class="nav-icon fas fa-user"></i> <!-- Change this class to the desired user icon -->
                 <p>
                     Employee

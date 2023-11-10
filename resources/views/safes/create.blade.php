@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Create Safe</h1>
+                        <h1>Create Item</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -54,22 +54,90 @@
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Add New Store</h3>
+                            <h3 class="card-title">Add New Item</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form action="" method="POST">
                             @csrf
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">title</label>
-                                    <input type="text" name="title" class="form-control">
+                            <div class="container-fluid">
+                                <div class="row  justify-content-center">
+                                    <div class="col-md-4">
+                                        <div class="card-body py-2">
+                                            <div class="form-group m-0">
+                                                <label for="exampleInputEmail1">Item code</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card-body py-2">
+                                            <div class="form-group m-0">
+                                                <label for="exampleInputEmail1">Item</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card-body py-2">
+                                            <div class="form-group m-0">
+                                                <label for="exampleInputEmail1">description</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card-body py-2">
+                                            <div class="form-group m-0">
+                                                <label for="exampleInputEmail1">type</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card-body py-2">
+                                            <div class="form-group m-0 ">
+                                                <label for="exampleInputEmail1">Quantity</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card-body py-2">
+                                            <div class="form-group m-0">
+                                                <label for="exampleInputEmail1">Unit</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="card-body py-2">
+                                            <div class="form-group m-0">
+                                                <label for="exampleInputEmail1">price</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card-body py-2">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">discount</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card-body py-2">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Tax</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">body</label>
-                                    <textarea class="form-control" name="body" id="exampleFormControlTextarea1"
-                                              rows="3"></textarea></div>
                             </div>
+
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
