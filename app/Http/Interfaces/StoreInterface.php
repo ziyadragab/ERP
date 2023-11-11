@@ -6,6 +6,8 @@ interface StoreInterface{
     public function index();
     public function create();
     public function store($request);
+    public function edit($store);
+
 
 
 }

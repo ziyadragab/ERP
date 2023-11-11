@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
 
@@ -24,6 +25,21 @@ Route::group([
     Route::get('','index')->name('index');
     Route::get('create','create')->name('create');
     Route::post('store','store')->name('store');
+    Route::get('edit/{store}','edit')->name('edit');
+
 
 });
 
+
+Route::group([
+    'controller'=>InvoiceController::class,
+    'as'=>'invoice.',
+    'prefix'=>'invoices'
+],function(){
+    Route::get('','index')->name('index');
+    Route::get('create','create')->name('create');
+    Route::post('store','store')->name('store');
+    Route::get('edit/{invoice}','edit')->name('edit');
+
+
+});

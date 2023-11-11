@@ -28,8 +28,13 @@ class StoreRepository implements StoreInterface{
             'tax'=>$request->tax,
             'quantity'=>$request->quantity
         ]);
+        toast('Your Store as been submited!','success');
         return redirect()->route('store.index');
         
+    }
+    public function edit($store)
+    {
+      return view('safes.edit',compact('store'));   
     }
 }
 

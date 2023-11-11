@@ -36,7 +36,7 @@
                 <div class="card-body">
 
 
-                    <a href="{{ route('store.create') }}" class="btn btn-success" role="button" aria-disabled="true">Add item</a><br><br>
+                    <a href="" class="btn btn-success" role="button" aria-disabled="true">Add item</a><br><br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -58,27 +58,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($stores as $store)
-                                <tr>
-                                    <td>{{ $store->id }}</td>
-                                    <td>{{ $store['item-code'] }}</td>
-                                    <td>{{ $store->item }}</td>
-                                    <td>{{ $store->description }}</td>
-                                    <td>{{ $store->type }}</td>
-                                    <td>{{ $store->quantity }}</td>
-                                    <td>{{ $store->unit }}</td>
-                                    <td>{{ $store->price }}</td>
-                                    <td>{{ $store->price * $store->quantity }}</td>
-                                    <td>{{ $store->discount }}%</td>
-                                    <td>{{ $store->price * $store->quantity - ($store->price * $store->quantity * $store->discount / 100) }}</td>
-                                    <td>{{ $store->tax }}%</td>
-                                    <td>{{ ($store->price * $store->quantity - ($store->price * $store->quantity * $store->discount / 100)) + (($store->price * $store->quantity - ($store->price * $store->quantity * $store->discount / 100)) * $store->tax / 100) }}</td>
-                                    <td>
-                                        <a href="{{ route('store.edit',$store) }}" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Edit</a>
-                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="">Delete</button>
-                                    </td>
-                                </tr>
-                            @endforeach
+                           
                         </tbody>
                     </table>
                 </div>
