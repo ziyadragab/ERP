@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Edit Post : <span class="text-danger">{{$post->title}}</span></h1>
+                        <h1>Edit store : <span class="text-danger">{{$store['item-code']}}</span></h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -32,45 +32,29 @@
                 </div>
                 <div class="card-body">
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                   
 
-                    @if(session()->has('edit'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{\session()->get('edit')}}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-
+                   
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Edit Post</h3>
+                            <h3 class="card-title">Edit store</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{route('posts.update',[$post->id])}}" method="POST">
+                        <form action="" method="store">
                             @method('put')
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">title</label>
-                                    <input type="text" name="title" value="{{$post->title}}" class="form-control"
+                                    <input type="text" name="title" value="" class="form-control"
                                            required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">body</label>
-                                    <textarea class="form-control" name="body" id="exampleFormControlTextarea1"
-                                              rows="3" required>{{$post->body}}</textarea></div>
+                                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1"
+                                              rows="3" required>{{$store->description}}</textarea></div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
