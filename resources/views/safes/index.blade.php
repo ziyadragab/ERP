@@ -49,29 +49,22 @@
                             <th>price</th>
                             <th>discount</th>
                             <th>Tax</th>
-                        
                         </tr>
 
                         </thead>
                         <tbody>
-
+                        @foreach ( $stores as $store )
+                            
                             <tr>
-                                <td>1001</td>
-                                <td>zx-240</td>
-                                <td>hold 32-55</td>
-                                <td>screen holder </td>
-                                <td>50</td>
-                                <td>
-                                    <select id="unit" name="unit">
-                                    <option value="australia">Kg</option>
-                                    <option value="canada">box</option>
-                                    <option value="usa">cardboard</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    220.50
-                                </td>
+                                <td>{{ $store['item-code'] }}</td>
+                                <td>{{ $store->item }}</td>
+                                <td>{{ $store->description }}</td>
+                                <td>{{ $store->type }}</td>
+                                <td>{{ $store->quantity }}</td>
+                                <td> {{ $store->unit }}</td>
+                                <td>{{ $store->price }}</td>
                             </tr>
+                            @endforeach
 
 
 
