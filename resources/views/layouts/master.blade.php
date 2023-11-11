@@ -20,6 +20,7 @@
 </div>
 <!-- ./wrapper -->
 @include('layouts.footer-scripts')
+@include('sweetalert::alert')
 
 </body>
 </html>
