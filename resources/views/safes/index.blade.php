@@ -45,14 +45,14 @@
                                 <th>Item</th>
                                 <th>Description</th>
                                 <th>Type</th>
-                                <th>Quantity</th>
                                 <th>Unit</th>
+                                <th>Quantity</th>
                                 <th>Price</th>
-                                <th>Total</th>
+                                {{-- <th>Total</th>
                                 <th>Discount (%)</th>
                                 <th>Total After Discount</th>
                                 <th>Tax (%)</th>
-                                <th>Total After Tax</th>
+                                <th>Total After Tax</th> --}}
                                 <th>Action</th>
 
                             </tr>
@@ -65,14 +65,14 @@
                                     <td>{{ $store->item }}</td>
                                     <td>{{ $store->description }}</td>
                                     <td>{{ $store->type }}</td>
-                                    <td>{{ $store->quantity }}</td>
                                     <td>{{ $store->unit }}</td>
+                                    <td>{{ $store->quantity }}</td>
                                     <td>{{ $store->price }}</td>
-                                    <td>{{ $store->price * $store->quantity }}</td>
-                                    <td>{{ $store->discount }}%</td>
+                                    {{-- <td>{{ $store->price * $store->quantity }}</td> --}}
+                                    {{-- <td>{{ $store->discount }}%</td>
                                     <td>{{ $store->price * $store->quantity - ($store->price * $store->quantity * $store->discount / 100) }}</td>
                                     <td>{{ $store->tax }}%</td>
-                                    <td>{{ ($store->price * $store->quantity - ($store->price * $store->quantity * $store->discount / 100)) + (($store->price * $store->quantity - ($store->price * $store->quantity * $store->discount / 100)) * $store->tax / 100) }}</td>
+                                    <td>{{ ($store->price * $store->quantity - ($store->price * $store->quantity * $store->discount / 100)) + (($store->price * $store->quantity - ($store->price * $store->quantity * $store->discount / 100)) * $store->tax / 100) }}</td> --}}
                                     <td>
                                         <a href="{{ route('store.edit',$store) }}" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Edit</a>
                                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="">Delete</button>

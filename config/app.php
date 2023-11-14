@@ -189,4 +189,8 @@ return [
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ])->toArray(),
 
+    'files' => [
+        // ...
+        config_path('constants.php'),
+    ],
 ];

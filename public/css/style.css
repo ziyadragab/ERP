@@ -1,0 +1,11 @@
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #28a745;
+}
+body:not(.layout-fixed) .main-sidebar {
+    height: 113vh;
+    min-height: 100%;
+}
+.card-primary:not(.card-outline) > .card-header {
+    background-color: #28a745;
+}

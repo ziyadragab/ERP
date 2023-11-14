@@ -94,6 +94,35 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="unit">Unit</label>
+                                            <select class="w-100 " style="height: 37px" id="unit" name="unit">
+                                                <option value="box" {{ old('unit')=='box' ? 'selected' : '' }}>Box
+                                                </option>
+                                                <option value="cardboard" {{ old('unit')=='cardboard' ? 'selected' : ''
+                                                    }}>Cardboard</option>
+                                            </select>
+                                            @error('unit')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="quantity">Number of unit pieces</label>
+                                            <input type="number" name="quantity"
+                                                class="form-control @error('quantity') is-invalid @enderror"
+                                                value="{{ old('quantity') }}">
+                                            @error('quantity')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="card-body py-2">
                                         <div class="form-group m-0">
@@ -111,7 +140,7 @@
                                     <div class="card-body py-2">
                                         <div class="form-group m-0">
                                             <label for="price">Price</label>
-                                            <input type="number" name="price"
+                                            <input type="number" step="0.01" name="price"
                                                 class="form-control @error('price') is-invalid @enderror"
                                                 value="{{ old('price') }}">
                                             @error('price')
@@ -121,25 +150,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="unit">Unit</label>
-                                            <select class="w-100 " style="height: 37px" id="unit" name="unit">
-                                                <option value="kg" {{ old('unit')=='kg' ? 'selected' : '' }}>Kg</option>
-                                                <option value="box" {{ old('unit')=='box' ? 'selected' : '' }}>Box
-                                                </option>
-                                                <option value="cardboard" {{ old('unit')=='cardboard' ? 'selected' : ''
-                                                    }}>Cardboard</option>
-                                            </select>
-                                            @error('unit')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-3">
+
+                                {{-- <div class="col-md-3">
                                     <div class="card-body py-2">
                                         <div class="form-group">
                                             <label for="discount">Discount</label>
@@ -164,13 +177,13 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                     </form>
                 </div>
