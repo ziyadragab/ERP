@@ -46,16 +46,8 @@
 
                         <div class="row justify-content-around mb-4">
 
-                            <div class="input-group col-md-2 ">
-                                <label for="clientContact" class=" control-label">Invoice Number</label>
 
-                                <input type="text" name="invoice_id" id="invoice_id"
-                                    class="form-control required rounded" placeholder="Invoice Number"
-                                    aria-describedby="sizing-addon1" value="">
-                            </div>
-                            <div class="col-md-2 no-padding-right">
-                                <label for="clientContact" class=" control-label">Invoice Date</label>
-
+                            <div class="col-xs-4 no-padding-right">
                                 <div class="">
                                     <div class="input-group date" id="invoice_date">
                                         <input type="text" class="form-control required" name="invoice_date"
@@ -66,37 +58,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2 no-padding-right">
-
-
-                                <div class="">
-                                    <label for="clientContact" class=" control-label">Due Date</label>
-
-                                    <div class="input-group date" id="invoice_date">
-                                        <input type="text" class="form-control required" name="due_date"
-                                            placeholder="Due Date" data-date-format="" />
-                                        <span class="input-group-addon">
-                                            <span class="far fa-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="input-group col-md-2 ">
-                                <label for="clientContact" class=" control-label">Payment Type</label>
-
-
-
-                                <select class="form-control rounded" name="paymentType" id="paymentType">
-                                    <option value="">~~SELECT~~</option>
-                                    <option value="1">Cheque</option>
-                                    <option value="2">Cash</option>
-                                    <option value="3">Credit Card</option>
-                                </select>
-
+                            <div class="input-group col-md-3 ">
+                                <input type="text" name="invoice_id" id="invoice_id"
+                                    class="form-control required rounded" placeholder="Invoice Number"
+                                    aria-describedby="sizing-addon1" value="">
                             </div>
                         </div>
-
 
                         <div class="row justify-content-around">
                             <div class="col-xs-6">
