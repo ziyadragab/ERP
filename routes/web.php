@@ -27,7 +27,6 @@ Route::group([
     Route::post('store','store')->name('store');
     Route::get('edit/{store}','edit')->name('edit');
 
-
 });
 
 
