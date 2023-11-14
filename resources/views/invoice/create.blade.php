@@ -1,187 +1,98 @@
 @extends('layouts.master')
+@push('css')
+    <link rel="stylesheet" href="{{ asset('inv/css/AdminLTE.css') }}">
+    <link rel="stylesheet" href="{{ asset('inv/css/bootstrap.datetimepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('inv/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('inv/css/skin-green.css') }}">
+    <link rel="stylesheet" href="{{ asset('inv/css/skin-purple.css') }}">
+    <link rel="stylesheet" href="{{ asset('inv/css/styles.css') }}">
+@endpush
 
+@section('title')
+    ERP SYSTEM
+@endsection
 
 @section('content')
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Create Item</h1>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
+    {{-- <!-- Content Wrapper. -> --}}
 
-    <!-- Main content -->
-    <section class="content">
+    <div class="content-wrapper overflow-y-scroll">
+        <!-- Content Header (Page header) -->
 
-        <!-- Default box -->
-        <div class="card">
-            <div class="card-header">
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body">
-
-
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">Add New Item</h3>
+        <!-- Main content -->
+        <section class="content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">List Invoice </h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form action="{{route('store.store')}}" method="POST">
-                        @csrf
-                        <div class="container-fluid">
-                            <div class="row  justify-content-center">
-                                <div class="col-md-4">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="itemCode">Item code</label>
-                                            <input type="text" name="itemCode" class="form-control @error('itemCode') is-invalid @enderror" value="{{ old('itemCode') }}">
-                                            @error('itemCode')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="item">Item</label>
-                                            <input type="text" name="item"
-                                                class="form-control @error('item') is-invalid @enderror"
-                                                value="{{ old('item') }}">
-                                            @error('item')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-4">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="description">Description</label>
-                                            <input type="text" name="description"
-                                                class="form-control @error('description') is-invalid @enderror"
-                                                value="{{ old('description') }}">
-                                            @error('description')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="type">Type</label>
-                                            <input type="text" name="type"
-                                                class="form-control @error('type') is-invalid @enderror"
-                                                value="{{ old('type') }}">
-                                            @error('type')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="quantity">Quantity</label>
-                                            <input type="number" name="quantity"
-                                                class="form-control @error('quantity') is-invalid @enderror"
-                                                value="{{ old('quantity') }}">
-                                            @error('quantity')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="price">Price</label>
-                                            <input type="number" name="price"
-                                                class="form-control @error('price') is-invalid @enderror"
-                                                value="{{ old('price') }}">
-                                            @error('price')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="unit">Unit</label>
-                                            <select class="w-100 " style="height: 37px" id="unit" name="unit">
-                                                <option value="kg" {{ old('unit')=='kg' ? 'selected' : '' }}>Kg</option>
-                                                <option value="box" {{ old('unit')=='box' ? 'selected' : '' }}>Box
-                                                </option>
-                                                <option value="cardboard" {{ old('unit')=='cardboard' ? 'selected' : ''
-                                                    }}>Cardboard</option>
-                                            </select>
-                                            @error('unit')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="card-body py-2">
-                                        <div class="form-group">
-                                            <label for="discount">Discount</label>
-                                            <input type="number" name="discount"
-                                                class="form-control @error('discount') is-invalid @enderror"
-                                                value="{{ old('discount') }}">
-                                            @error('discount')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card-body py-2">
-                                        <div class="form-group">
-                                            <label for="tax">Tax</label>
-                                            <input type="number" name="tax"
-                                                class="form-control @error('tax') is-invalid @enderror"
-                                                value="{{ old('tax') }}">
-                                            @error('tax')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
                 </div>
+                <div class="card-body">
+                    <table class="table table-striped table-hover table-bordered" id="data-table" cellspacing="0">
+                        <thead>
+                            <tr>
 
+                                <th>Invoice Number</th>
+                                <th>Customer</th>
+                                <th>Issue Date</th>
+                                <th>Due Date</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tr>
+                            <td>199</td>
+                            <td>Mohund Mohmoud</td>
+                            <td>15/11/2023</td>
+                            <td>15/12/2023</td>
+                            <td>cash</td>
+                            <td><span class="label label-success">paid</span></td>
+                            <td>
+                                <a href="#" class="btn btn-primary btn-xs"><i class="fas fa-edit"></i></a>
+                                <a href="#" data-invoice-id="" data-email="" data-invoice-type=""
+                                    data-custom-email="" class="btn btn-success btn-xs email-invoice"><i
+                                        class="fas fa-envelope"></i></a>
+                                <a href="#" class="btn btn-info btn-xs" target="_blank"><i
+                                        class="fas fa-download"></i></a>
+                                <a data-invoice-id="" class="btn btn-danger btn-xs delete-invoice"><i
+                                        class="fas fa-trash"></i></a>
+                            </td>
+
+
+
+
+                            <tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-        <!-- /.card -->
-
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-
+    </div>
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+
+
+
+
+@push('js')
+    <script src="{{ asset('inv/js/app.js') }}"></script>
+    <script src="{{ asset('inv/js/app.min.js') }}"></script>
+    <script src="{{ asset('inv/js/bootstrap.datetime.js') }}"></script>
+    <script src="{{ asset('inv/js/scripts.js') }}"></script>
+    <script src="{{ asset('inv/js/npm.js') }}"></script>
+    <script src="{{ asset('inv/js/moment.js') }}"></script>
+    <script src="{{ asset('inv/js/bootstrap.password.js') }}"></script>
+    <script src="{{ asset('inv/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('inv/js/bootstrap.js') }}"></script>
+@endpush
