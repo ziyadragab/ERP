@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Create Item</h1>
+                    <h1>Create Product</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -39,7 +39,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="{{route('store.store')}}" method="POST">
+                    <form action="{{route('product.store')}}" method="POST">
                         @csrf
                         <div class="container-fluid">
                             <div class="row  justify-content-center">

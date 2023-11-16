@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +19,27 @@ use App\Http\Controllers\StoreController;
 
 
 Route::group([
-    'controller'=>StoreController::class,
-    'as'=>'store.'
+    'controller'=>ProductController::class,
+    'as'=>'product.'
 ],function(){
     Route::get('','index')->name('index');
     Route::get('create','create')->name('create');
     Route::post('store','store')->name('store');
-    Route::get('edit/{store}','edit')->name('edit');
+    Route::get('edit/{product}','edit')->name('edit');
+    Route::delete('delete/{product}','delete')->name('delete');
+
+});
+
+Route::group([
+    'controller'=>CustomerController::class,
+    'as'=>'customer.',
+    'prefix'=>'customers'
+],function(){
+    Route::get('','index')->name('index');
+    Route::get('create','create')->name('create');
+    Route::post('store','store')->name('store');
+    Route::get('edit/{customer}','edit')->name('edit');
+    Route::delete('delete/{customer}','delete')->name('delete');
 
 });
 
@@ -39,6 +53,5 @@ Route::group([
     Route::get('create','create')->name('create');
     Route::post('store','store')->name('store');
     Route::get('edit/{invoice}','edit')->name('edit');
-
 
 });
