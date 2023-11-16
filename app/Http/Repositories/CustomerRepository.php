@@ -13,14 +13,12 @@ class CustomerRepository implements CustomerInterface{
     public function create()
     {
          return view('customer.create');
-        
     }
     public function store($request)
     {
         Customer::create([
             'name'=>$request->name,
             'email'=>$request->email??null,
-
             'address_1'=>$request->address_1,
             'address_2'=>$request->address_2??null,
             'town'=>$request->town??null,
@@ -44,9 +42,6 @@ class CustomerRepository implements CustomerInterface{
 
     }
 }
-
-
-
 
 
 
