@@ -6,7 +6,8 @@
 <!-- Font Awesome -->
 <link href="{{asset('css/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
 <!-- Theme style -->
-<link href="{{asset('css/adminlte.min.css')}}" rel="stylesheet">
+<link href="{{asset('css/adminlte.min.css')}}" rel="stylesheet"  >
+<link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 <link href="{{asset('datatables/css/datatables-bs4/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 <link href="{{asset('datatables/css/datatables-responsive/responsive.bootstrap4.min.css')}}" rel="stylesheet">
@@ -14,4 +15,6 @@
 
 
 
+{{-- invoice --}}
+@stack("css")
 

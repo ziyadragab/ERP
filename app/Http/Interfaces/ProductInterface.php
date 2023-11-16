@@ -2,11 +2,12 @@
 
 namespace App\Http\Interfaces;
 
-interface StoreInterface{
+interface ProductInterface{
     public function index();
     public function create();
     public function store($request);
-    public function edit($store);
+    public function edit($product);
+    public function delete($product);
 
 
 
