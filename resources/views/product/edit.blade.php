@@ -1,22 +1,19 @@
 @extends('layouts.master')
-@push('css')
-    <link rel="stylesheet" href="{{ asset('inv/css/AdminLTE.css') }}">
-    <link rel="stylesheet" href="{{ asset('inv/css/bootstrap.datetimepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('inv/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('inv/css/skin-green.css') }}">
-    <link rel="stylesheet" href="{{ asset('inv/css/skin-purple.css') }}">
-    <link rel="stylesheet" href="{{ asset('inv/css/styles.css') }}">
-@endpush
 
-@section('title')
-    ERP SYSTEM
-@endsection
 
 @section('content')
-    {{-- <!-- Content Wrapper. -> --}}
-
-    <div class="content-wrapper overflow-y-scroll">
-        <!-- Content Header (Page header) -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Edit Item</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
     <!-- Main content -->
     <section class="content">
@@ -36,9 +33,9 @@
             <div class="card-body">
 
 
-                <div class="card card-primary">
+                <div class="card card-success">
                     <div class="card-header">
-                        <h3 class="card-title">Add New Item</h3>
+                        <h3 class="card-title">Edit Item</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -97,6 +94,35 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="unit">Unit</label>
+                                            <select class="w-100 " style="height: 37px" id="unit" name="unit">
+                                                <option value="box" {{ old('unit')=='box' ? 'selected' : '' }}>Box
+                                                </option>
+                                                <option value="cardboard" {{ old('unit')=='cardboard' ? 'selected' : ''
+                                                    }}>Cardboard</option>
+                                            </select>
+                                            @error('unit')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="quantity">Number of unit pieces</label>
+                                            <input type="number" name="quantity"
+                                                class="form-control @error('quantity') is-invalid @enderror"
+                                                value="{{ old('quantity') }}">
+                                            @error('quantity')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="card-body py-2">
                                         <div class="form-group m-0">
@@ -114,7 +140,7 @@
                                     <div class="card-body py-2">
                                         <div class="form-group m-0">
                                             <label for="price">Price</label>
-                                            <input type="number" name="price"
+                                            <input type="number" step="0.01" name="price"
                                                 class="form-control @error('price') is-invalid @enderror"
                                                 value="{{ old('price') }}">
                                             @error('price')
@@ -124,25 +150,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <div class="card-body py-2">
-                                        <div class="form-group m-0">
-                                            <label for="unit">Unit</label>
-                                            <select class="w-100 " style="height: 37px" id="unit" name="unit">
-                                                <option value="kg" {{ old('unit')=='kg' ? 'selected' : '' }}>Kg</option>
-                                                <option value="box" {{ old('unit')=='box' ? 'selected' : '' }}>Box
-                                                </option>
-                                                <option value="cardboard" {{ old('unit')=='cardboard' ? 'selected' : ''
-                                                    }}>Cardboard</option>
-                                            </select>
-                                            @error('unit')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-3">
+
+                                {{-- <div class="col-md-3">
                                     <div class="card-body py-2">
                                         <div class="form-group">
                                             <label for="discount">Discount</label>
@@ -154,8 +164,8 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
+                                </div> --}}
+                                {{-- <div class="col-md-3">
                                     <div class="card-body py-2">
                                         <div class="form-group">
                                             <label for="tax">Tax</label>
@@ -167,13 +177,13 @@
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                     </form>
                 </div>

@@ -5,7 +5,7 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
         data-accordion="false">
         <li class="nav-item">
-            <a href="{{route('store.index')}}" class="nav-link">
+            <a href="{{route('product.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-shopping-bag"></i> <!-- Change this class to the desired store icon -->
                 <p>
                     Stores
@@ -24,7 +24,7 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('invoice.index') }}" class="nav-link">
+                    <a href="{{ route('invoice.create') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Create Invoice</p>
                     </a>
@@ -46,6 +46,20 @@
                     <span class="badge badge-info right"></span>
                 </p>
             </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('customer.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Create Customer</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('customer.index') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Manage Customers</p>
+                    </a>
+                </li>
+            </ul>
         </li>
         <li class="nav-item">
             <a href="" class="nav-link">
