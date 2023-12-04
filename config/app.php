@@ -171,6 +171,7 @@ return [
         App\Providers\RepositoryServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         Milon\Barcode\BarcodeServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
     ])->toArray(),
 
@@ -190,6 +191,7 @@ return [
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
+        
     ])->toArray(),
 
     'files' => [

@@ -9,7 +9,7 @@
 @endpush
 
 @section('title')
-    ERP SYSTEM
+    Create Invoice
 @endsection
 
 @section('content')

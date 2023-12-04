@@ -7,10 +7,9 @@ use App\Models\Product;
 
 
 class ProductRepository implements ProductInterface{
-    public function index()
+    public function index($dataTable)
     {
-        $products=Product::get();
-        return view('product.index',compact('products'));
+       return $dataTable->render('product.index');
     }
     public function create()
     {

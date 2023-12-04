@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\ProductDataTable;
 use App\Http\Interfaces\ProductInterface;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
@@ -13,8 +14,8 @@ class ProductController extends Controller
     {
          $this->productInterface=$productInterface;
     }
-    public function index(){
-        return $this->productInterface->index();
+    public function index(ProductDataTable $dataTable){
+        return $this->productInterface->index($dataTable);
     }
     public function create(){
         return $this->productInterface->create();

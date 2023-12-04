@@ -5,6 +5,15 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
         data-accordion="false">
         <li class="nav-item">
+            <a href="{{route('index')}}" class="nav-link">
+                <i class="nav-icon fas fa-home"></i> <!-- Change this class to the desired store icon -->
+                <p>
+                    Home
+                    <span class="badge badge-info right"></span>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="{{route('product.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-shopping-bag"></i> <!-- Change this class to the desired store icon -->
                 <p>
