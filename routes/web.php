@@ -17,10 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([
-
-], function () {
-    Route::get('', [HomeController::class,'index'])->name('index');
+Route::group([], function () {
+    Route::get('', [HomeController::class, 'index'])->name('index');
 
     Route::group([
         'controller' => ProductController::class,
@@ -31,7 +29,10 @@ Route::group([
         Route::get('create', 'create')->name('create');
         Route::post('store', 'store')->name('store');
         Route::get('edit/{product}', 'edit')->name('edit');
+        Route::put('update/{product}', 'update')->name('update');
         Route::delete('delete/{product}', 'delete')->name('delete');
+        Route::get('search', 'search')->name('search');
+
     });
     Route::group([
         'controller' => CustomerController::class,
@@ -42,6 +43,7 @@ Route::group([
         Route::get('create', 'create')->name('create');
         Route::post('store', 'store')->name('store');
         Route::get('edit/{customer}', 'edit')->name('edit');
+        Route::put('update/{customer}', 'update')->name('update');
         Route::delete('delete/{customer}', 'delete')->name('delete');
     });
 
@@ -55,5 +57,7 @@ Route::group([
         Route::get('create', 'create')->name('create');
         Route::post('store', 'store')->name('store');
         Route::get('edit/{invoice}', 'edit')->name('edit');
+        Route::get('get-customer/{customer}', 'getCustomerDetails')->name('getCustomerDetails');
+
     });
 });

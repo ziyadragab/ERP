@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\CustomerDataTable;
 use App\Http\Interfaces\CustomerInterface;
 use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
@@ -15,9 +16,9 @@ class CustomerController extends Controller
       $this->customerIntreface=$customer;
     }
 
-    public function index()
+    public function index(CustomerDataTable $dataTable)
     {
-         return $this->customerIntreface->index();
+         return $this->customerIntreface->index($dataTable);
     }
     public function create()
     {
@@ -39,4 +40,6 @@ class CustomerController extends Controller
     {
         return $this->customerIntreface->delete($customer);
     }
+  
+
 }

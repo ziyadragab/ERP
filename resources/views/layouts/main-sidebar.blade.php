@@ -49,7 +49,7 @@
 
         <li class="nav-item">
             <a href="" class="nav-link">
-                <i class="nav-icon fas fa-user-circle"></i> <!-- Change this class to the desired customer icon -->
+                <i class="nav-icon fas fa-user-circle"></i> 
                 <p>
                     Customer
                     <span class="badge badge-info right"></span>

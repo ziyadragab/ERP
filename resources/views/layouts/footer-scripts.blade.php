@@ -1,13 +1,7 @@
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-<script src="{{ asset('js/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-
-
-
-
-
+<!-- jQuery -->
+<script src="{{URL::asset('js/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{URL::asset('js/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 
 <!-- DataTables  & Plugins -->
@@ -22,5 +16,31 @@
 <script src="http://127.0.0.1:8000/datatables/js/datatables-buttons/buttons.html5.min.js"></script>
 <script src="http://127.0.0.1:8000/datatables/js/datatables-buttons/buttons.print.min.js"></script>
 <script src="http://127.0.0.1:8000/datatables/js/datatables-buttons/buttons.colVis.min.js"></script>
+
+<!-- AdminLTE App -->
+<script src="{{URL::asset('js/adminlte.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
 
 @stack('js')

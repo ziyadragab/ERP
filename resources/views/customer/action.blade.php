@@ -1,3 +1,4 @@
+
 <div class="dropdown">
     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
@@ -5,13 +6,13 @@
         </svg>
     </a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
-        <a class="dropdown-item" href="{{ route('product.edit', $product) }}">
+        <a class="dropdown-item" href="{{ route('customer.edit', $customer) }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                 <path d="M12.742 1.344a1 1 0 0 1 1.415 0l1.543 1.542a1 1 0 0 1 0 1.414l-9.086 9.086c-.47.47-1.47.47-1.94 0l-1.543-1.542a1 1 0 0 1 0-1.414l9.086-9.086a1 1 0 0 1 1.414 0zm1.414 2.828L2 14.828V16h1.172l10.656-10.656-1.414-1.414z"/>
             </svg>
             Edit
         </a>
-        <form id="delete-form" action="{{ route('product.delete', $product) }}" method="POST">
+        <form id="delete-form" action="{{ route('customer.delete', $customer) }}" method="POST">
             @csrf
             @method('delete')
             <button type="submit" class="delete dropdown-item">
@@ -24,6 +25,5 @@
         </form>
     </div>
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.1/dist/js/bootstrap.bundle.min.js"></script> --}}
-<script src="{{URL::asset('js/jquery/jquery.min.js')}}"></script>
+
+

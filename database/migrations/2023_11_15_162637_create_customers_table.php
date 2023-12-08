@@ -21,6 +21,13 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->integer('post_code')->nullable();
             $table->string('phone')->nullable();
+            $table->string('name_ship')->nullable();
+            $table->string('address_1_ship')->nullable();
+            $table->string('address_2_ship')->nullable();
+            $table->string('town_ship')->nullable();
+            $table->string('county_ship')->nullable();
+            $table->string('post_code_ship')->nullable();
+            $table->string('phone_ship')->nullable();
             $table->timestamps();
         });
     }
