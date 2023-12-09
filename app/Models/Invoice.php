@@ -22,13 +22,13 @@ class Invoice extends Model
         'status',
         'par_code',
         'customer_id',
-        'product_id', 
+        'product_id',
     ];
 
     public function products()
-    {
-        return $this->belongsToMany(Product::class);
-    }
+{
+    return $this->belongsToMany(Product::class)->withPivot('quantity', 'discount_percentage')->withTimestamps();
+}
 
     public function customer()
     {

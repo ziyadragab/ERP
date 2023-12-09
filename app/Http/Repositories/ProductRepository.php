@@ -65,7 +65,7 @@ class ProductRepository implements ProductInterface{
 
         // Perform a search in the database based on the entered text
         $products = Product::where('item_code', 'like', "%$searchText%")
-                            ->get(['item']); // Retrieve only the 'name' column
+                            ->get(); // Retrieve only the 'name' column
 
         // Return the result as JSON
         return response()->json($products);
