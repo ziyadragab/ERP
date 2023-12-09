@@ -43,6 +43,10 @@
                         @csrf
                         <div class="container-fluid">
                             <div class="row  justify-content-center">
+
+                                <div class="col-md-12">
+                                    <h5> <label for="phone">Customer Info :</label></h5>
+                                 </div>
                                 <div class="col-md-4">
                                     <div class="card-body py-2">
                                         <div class="form-group m-0">
@@ -122,7 +126,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="card-body py-2">
                                         <div class="form-group m-0">
                                             <label for="post_code">Post Code</label>
@@ -130,6 +134,40 @@
                                                 class="form-control @error('post_code') is-invalid @enderror"
                                                 value="{{ old('post_code') }}">
                                             @error('post_code')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel"  name="phone"
+                                                class="form-control @error('phone') is-invalid @enderror"
+                                                value="{{ old('phone') }}">
+                                            @error('phone')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                   <h5> <label for="phone">Shiping Info :</label></h5>
+                                </div>
+
+
+
+                                <div class="col-md-4">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="name_ship">Name</label>
+                                            <input type="text"  name="name_ship"
+                                                class="form-control @error('name_ship') is-invalid @enderror"
+                                                value="{{ old('name_ship') }}">
+                                            @error('name_ship')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -149,6 +187,93 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+                                <div class="col-md-4">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="address_1_ship">Address One </label>
+                                            <input type="text"  name="address_1_ship"
+                                                class="form-control @error('address_1_ship') is-invalid @enderror"
+                                                value="{{ old('address_1_ship') }}">
+                                            @error('address_1_ship')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="address_2_ship">Address Two </label>
+                                            <input type="text"  name="address_2_ship"
+                                                class="form-control @error('address_2_ship') is-invalid @enderror"
+                                                value="{{ old('address_2_ship') }}">
+                                            @error('address_2_ship')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="town_ship">Address Two </label>
+                                            <input type="text"  name="town_ship"
+                                                class="form-control @error('town_ship') is-invalid @enderror"
+                                                value="{{ old('town_ship') }}">
+                                            @error('town_ship')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="county_ship">Country</label>
+                                            <input type="text"  name="county_ship"
+                                                class="form-control @error('county_ship') is-invalid @enderror"
+                                                value="{{ old('county_ship') }}">
+                                            @error('county_ship')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="post_code_ship">Post Code</label>
+                                            <input type="number"  name="post_code_ship"
+                                                class="form-control @error('post_code_ship') is-invalid @enderror"
+                                                value="{{ old('post_code_ship') }}">
+                                            @error('post_code_ship')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="card-body py-2">
+                                        <div class="form-group m-0">
+                                            <label for="phone_ship">Phone Number</label>
+                                            <input type="tel"  name="phone_ship"
+                                                class="form-control @error('phone_ship') is-invalid @enderror"
+                                                value="{{ old('phone_ship') }}">
+                                            @error('phone_ship')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 

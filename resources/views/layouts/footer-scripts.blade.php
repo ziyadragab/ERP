@@ -9,7 +9,6 @@
 <script src="http://127.0.0.1:8000/datatables/js/datatables-bs4/dataTables.bootstrap4.min.js"></script>
 <script src="http://127.0.0.1:8000/datatables/js/datatables-responsive/dataTables.responsive.min.js"></script>
 <script src="http://127.0.0.1:8000/datatables/js/datatables-responsive/responsive.bootstrap4.min.js"></script>
-<script src="http://127.0.0.1:8000/datatables/js/datatables-buttons/dataTables.buttons.min.js"></script>
 <script src="http://127.0.0.1:8000/datatables/js/datatables-buttons/buttons.bootstrap4.min.js"></script>
 <script src="http://127.0.0.1:8000/datatables/js/jszip/jszip.min.js"></script>
 <script src="http://127.0.0.1:8000/datatables/js/pdfmake/pdfmake.min.js"></script>
@@ -21,7 +20,6 @@
 <!-- AdminLTE App -->
 <script src="{{URL::asset('js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{URL::asset('js/demo.js')}}"></script>
 
 <script>
     $(function () {
@@ -40,5 +38,6 @@
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 @stack('js')

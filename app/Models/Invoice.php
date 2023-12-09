@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,12 +8,27 @@ class Invoice extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['date', 'number', 'notes', 'product_id', 'customer_id'];
+    protected $fillable = [
+        'invoice',
+        'invoice_date',
+        'invoice_due_date',
+        'subtotal',
+        'shipping',
+        'discount',
+        'vat',
+        'total',
+        'notes',
+        'invoice_type',
+        'status',
+        'par_code',
+        'customer_id',
+        'product_id',
+    ];
 
     public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
+{
+    return $this->belongsToMany(Product::class)->withPivot('quantity', 'discount_percentage')->withTimestamps();
+}
 
     public function customer()
     {

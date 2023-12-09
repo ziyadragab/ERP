@@ -46,9 +46,9 @@
                                 <div class="col-md-4">
                                     <div class="card-body py-2">
                                         <div class="form-group m-0">
-                                            <label for="itemCode">Item code</label>
-                                            <input type="text" name="itemCode" class="form-control @error('itemCode') is-invalid @enderror" value="{{ old('itemCode') }}">
-                                            @error('itemCode')
+                                            <label for="item_code">Item code</label>
+                                            <input type="text" name="item_code" class="form-control @error('item_code') is-invalid @enderror" value="{{ old('item_code') }}">
+                                            @error('item_code')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>

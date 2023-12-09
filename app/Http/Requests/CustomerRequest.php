@@ -22,14 +22,21 @@ class CustomerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'nullable|email|unique:users,email|max:255',
-            'address_1' => 'required|string|max:255',
-            'address_2' => 'nullable|string|max:255',
-            'town' => 'nullable|string|max:255',
-            'country' => 'nullable|string|max:255',
-            'post_code' => 'nullable|string|max:20',
-            'phone' => 'required|string|max:20',
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'address_1' => 'required|string',
+            'address_2' => 'nullable|string',
+            'town' => 'nullable|string',
+            'country' => 'nullable|string',
+            'post_code' => 'nullable|integer',
+            'phone' => 'nullable|string',
+            'name_ship' => 'nullable|string',
+            'address_1_ship' => 'nullable|string',
+            'address_2_ship' => 'nullable|string',
+            'town_ship' => 'nullable|string',
+            'county_ship' => 'nullable|string',
+            'post_code_ship' => 'nullable|integer',
+            'phone_ship' => 'nullable|string',
         ];
     }
 }
