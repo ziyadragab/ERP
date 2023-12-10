@@ -123,11 +123,11 @@ Edit Product
                                 <div class="col-md-4">
                                     <div class="card-body py-2">
                                         <div class="form-group m-0">
-                                            <label for="quantity">Number of unit pieces</label>
-                                            <input type="number" name="quantity"
-                                                class="form-control @error('quantity') is-invalid @enderror"
-                                                value="{{ old('quantity', $product->quantity) }}">
-                                            @error('quantity')
+                                            <label for="unit_pieces">Number of unit pieces</label>
+                                            <input type="number" name="unit_pieces"
+                                                class="form-control @error('unit_pieces') is-invalid @enderror"
+                                                value="{{ old('unit_pieces', $product->unit_pieces) }}">
+                                            @error('unit_pieces')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>

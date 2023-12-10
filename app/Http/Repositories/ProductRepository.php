@@ -26,7 +26,8 @@ class ProductRepository implements ProductInterface{
             'type'=>$request->type,
             'discount'=>$request->discount,
             'tax'=>$request->tax,
-            'quantity'=>$request->quantity
+            'unit_pieces'=>$request->unit_pieces,
+            'quantity'=>$request->quantity * $request->unit_pieces
         ]);
         toast('Your Product as been submited!','success');
         return redirect()->route('product.index');
@@ -47,7 +48,9 @@ class ProductRepository implements ProductInterface{
             'type'=>$request->type,
             'discount'=>$request->discount,
             'tax'=>$request->tax,
-            'quantity'=>$request->quantity
+            'unit_pieces'=>$request->unit_pieces,
+            'quantity'=>$request->quantity * $request->unit_pieces
+
         ]);
         toast('Your Product Updated Successfully!','success');
         return redirect()->route('product.index');
@@ -67,7 +70,7 @@ class ProductRepository implements ProductInterface{
         $products = Product::where('item_code', 'like', "%$searchText%")
                             ->get(); // Retrieve only the 'name' column
 
-        // Return the result as JSON
+        
         return response()->json($products);
     }
 }
