@@ -18,11 +18,13 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('price')->nullable();
             $table->string('unit')->nullable();
+            $table->string('unit_pieces')->nullable();
             $table->string('type')->nullable();
             $table->integer('quantity')->nullable();
             $table->decimal('discount', 5, 2)->default(0.00)->nullable();
             $table->decimal('tax', 5, 2)->default(0.00)->nullable();
             $table->timestamps();
+
         });
     }
 
