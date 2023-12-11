@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\DataTables\InvoiceDataTable;
 use App\Http\Requests\InvoiceRequest;
 use App\Http\Interfaces\InvoiceInterface;
+use App\Models\Invoice;
 
 class InvoiceController extends Controller
 {
@@ -23,6 +24,15 @@ class InvoiceController extends Controller
     }
     public function store(InvoiceRequest $request){
         return $this->invoiceInterface->store($request);
+    }
+    public function edit(Invoice $invoice){
+        return $this->invoiceInterface->edit($invoice);
+    }
+    public function update( Invoice $invoice, InvoiceRequest $request){
+        return $this->invoiceInterface->update($invoice,$request);
+    }
+    public function delete(Invoice $invoice){
+        return $this->invoiceInterface->delete($invoice);
     }
     public function getCustomerDetails(Customer $customer)
     {

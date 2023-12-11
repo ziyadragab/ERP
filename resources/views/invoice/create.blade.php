@@ -576,7 +576,7 @@ Create Invoice
             showToast('success', 'Invoice created successfully');
             $('#create_invoice')[0].reset();
             // Redirect back to the form page after successful submission
-            window.location.href = '{{ route('invoice.create') }}';
+            window.location.href = '{{ route('invoice.index')}}';
         },
         error: function (error) {
             console.error(error.responseText);

@@ -57,7 +57,10 @@ Route::group([], function () {
         Route::get('create', 'create')->name('create');
         Route::post('store', 'store')->name('store');
         Route::get('edit/{invoice}', 'edit')->name('edit');
+        Route::put('update/{invoice}', 'update')->name('update');
         Route::get('get-customer/{customer}', 'getCustomerDetails')->name('getCustomerDetails');
+        Route::delete('/{invoice}', 'delete')->name('delete');
+
 
     });
 });

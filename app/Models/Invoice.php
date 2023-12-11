@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,14 +23,13 @@ class Invoice extends Model
         'status',
         'par_code',
         'customer_id',
-        
+
     ];
 
     public function products()
-{
-    return $this->belongsToMany(Product::class)->withPivot('quantity', 'discount_percentage')->withTimestamps();
-}
-
+    {
+        return $this->hasMany(InvoiceProducts::class);
+    }
     public function customer()
     {
         return $this->belongsTo(Customer::class, 'customer_id');
