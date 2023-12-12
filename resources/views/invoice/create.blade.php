@@ -596,20 +596,20 @@
                 return;
             }
 
-            // If all products are valid, proceed with the form submission
-            $.ajax({
-                type: 'POST',
-                url: '{{ route('invoice.store') }}',
-                data: $(this).serialize(),
-                success: function(response) {
-                    console.log(response);
-                    showToast('success', 'Invoice created successfully');
-                    $('#create_invoice')[0].reset();
-                    // Redirect back to the form page after successful submission
-                    window.location.href = '{{ route('invoice.create') }}';
-                },
-                error: function(error) {
-                    console.error(error.responseText);
+    // If all products are valid, proceed with the form submission
+    $.ajax({
+        type: 'POST',
+        url: '{{ route('invoice.store') }}',
+        data: $(this).serialize(),
+        success: function (response) {
+            console.log(response);
+            showToast('success', 'Invoice created successfully');
+            $('#create_invoice')[0].reset();
+            // Redirect back to the form page after successful submission
+            window.location.href = '{{ route('invoice.create') }}';
+        },
+        error: function (error) {
+            console.error(error.responseText);
 
                     var errors = error.responseJSON.errors;
 

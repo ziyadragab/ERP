@@ -71,6 +71,7 @@ class InvoiceRepository implements InvoiceInterface
                 'invoice_id'=>$invoice->id
             ]);
         }
+        toast( 'Invoice Created Successfully' ,'success');
         return response()->json(['message' => 'Invoice created successfully']);
     }
     public function edit($invoice)

@@ -21,9 +21,39 @@ class InvoiceDataTable extends DataTable
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
-        return (new EloquentDataTable($query))
-            ->addColumn('action', 'invoice.action')
-            ->setRowId('id');
+        $dataTable = (new EloquentDataTable($query))
+        ->addColumn('action', function (Invoice $invoice) {
+            return view('invoice.action', compact('invoice'));
+        })
+        ->editColumn('id', function ($raw) {
+            static $i = 1;
+            return $i++;
+        })
+        ->addColumn('customer', function (Invoice $invoice) {
+            return optional($invoice->customer)->name; // Assuming 'name' is the customer field you want to display
+        })
+        ->addColumn('products', function (Invoice $invoice) {
+            return $this->formatProducts($invoice->products);
+        });
+
+    return $dataTable->rawColumns(['action','customer', 'id', 'products']);
+    }
+    protected function formatProducts($products)
+    {
+        $formattedProducts = collect($products)->map(function ($product) {
+            return sprintf(
+                'Code: %s,Name: %s , Quantity: %s , Price: %s , Discount: %s , SubTotal: %s ' ,
+                $product->product_code,
+                $product->product_name,
+                $product->product_quantity,
+                $product->product_price,
+                $product->product_discount,
+                $product->product_subTotal,
+
+            );
+        })->implode('<hr>');
+
+        return $formattedProducts;
     }
 
     /**
@@ -31,7 +61,7 @@ class InvoiceDataTable extends DataTable
      */
     public function query(Invoice $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->with(['customer','products']);
     }
 
     /**
@@ -40,20 +70,20 @@ class InvoiceDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('invoice-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    //->dom('Bfrtip')
-                    ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+            ->setTableId('invoice-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            //->dom('Bfrtip')
+            ->orderBy(1)
+            ->selectStyleSingle()
+            ->buttons([
+                Button::make('excel'),
+                Button::make('csv'),
+                Button::make('pdf'),
+                Button::make('print'),
+                Button::make('reset'),
+                Button::make('reload')
+            ]);
     }
 
     /**
@@ -62,15 +92,18 @@ class InvoiceDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(60)
-                  ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('add your columns'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+            ['data' => 'id', 'title' => 'ID', 'name' => 'id'],
+            ['data' => 'customer', 'title' => 'Customer', 'name' => 'customer'],
+            ['data' => 'number', 'title' => 'Invoice Number', 'name' => 'number'],
+            ['data' => 'date', 'title' => 'Date', 'name' => 'date'],
+            ['data' => 'due_date', 'title' => 'Due Date', 'name' => 'due_date'],
+            ['data' => 'subtotal', 'title' => 'Sub Total', 'name' => 'subtotal'],
+            ['data' => 'discount', 'title' => 'Discount', 'name' => 'discount'],
+            ['data' => 'total', 'title' => 'Total', 'name' => 'total'],
+            ['data' => 'type', 'title' => 'Payment Type', 'name' => 'type'],
+            ['data' => 'products', 'title' => 'Products', 'name' => 'products'],
+            ['data' => 'action', 'title' => 'ACTION', 'name' => 'action', 'searchable' => false, 'printable' => false, 'exportable' => false],
+
         ];
     }
 
