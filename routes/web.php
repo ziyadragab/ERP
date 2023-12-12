@@ -60,6 +60,7 @@ Route::group([], function () {
         Route::put('update/{invoice}', 'update')->name('update');
         Route::get('get-customer/{customer}', 'getCustomerDetails')->name('getCustomerDetails');
         Route::delete('/{invoice}', 'delete')->name('delete');
+        Route::delete('/deleteProduct/{itemCode}','deleteProduct')->name('deleteProduct');
 
 
     });

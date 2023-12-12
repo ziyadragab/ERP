@@ -10,7 +10,8 @@ interface InvoiceInterface{
     public function update($invoice,$request);
     public function delete($invoice);
     public function getCustomerDetails($customer);
-
+    public function deleteProduct($itemCode);
+  
 
 
 }

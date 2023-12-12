@@ -38,4 +38,7 @@ class InvoiceController extends Controller
     {
         return $this->invoiceInterface->getCustomerDetails($customer);
     }
+    public function deleteProduct($itemCode){
+        return $this->invoiceInterface->deleteProduct($itemCode);
+    }
 }

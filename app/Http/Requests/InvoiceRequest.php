@@ -46,7 +46,7 @@ class InvoiceRequest extends FormRequest
         'customer_address_1_ship' => 'required|string',
         'customer_town_ship' => 'required|string',
         'customer_postcode_ship' => 'required|string',
-        'invoice_products' => 'required',
+        'invoice_products' => 'required|min:1', // Ensure there is at least one product
         'invoice_products.*.name' => 'required|string|exists:products,name',
         'invoice_products.*.item_code' => 'required|string|exists:products,item_code',
         'invoice_products.*.quantity' => 'required|integer|min:1|max_available_quantity',
