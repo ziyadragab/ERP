@@ -28,6 +28,7 @@ class ProductRequest extends FormRequest
             'description' => 'required',
             'price' => 'required|numeric',
             'unit' => 'required',
+            'unit_pieces'=>'required',
             'type' => 'required',
             'discount' => 'nullable|numeric|min:0|max:100',
             'tax' => 'nullable|numeric|min:0|max:100',

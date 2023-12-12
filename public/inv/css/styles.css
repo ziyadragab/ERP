@@ -163,3 +163,17 @@ strong.shipping {
 .login-form {
     margin-top: 100px;
 }
+
+.product-suggestions-container {
+    background-color: #ddd !important;
+    margin-top: 7px;
+    border-radius: 3px;
+    text-align: left;
+    padding: 6px;
+}
+.product-suggestions-container .product-suggestion {
+    background-color: #fff;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 7px;
+}

@@ -6,10 +6,11 @@ use App\Http\Interfaces\ProductInterface;
 use App\Models\Product;
 
 
-class ProductRepository implements ProductInterface{
+class ProductRepository implements ProductInterface
+{
     public function index($dataTable)
     {
-       return $dataTable->render('product.index');
+        return $dataTable->render('product.index');
     }
     public function create()
     {
@@ -18,44 +19,46 @@ class ProductRepository implements ProductInterface{
     public function store($request)
     {
         Product::create([
-            'item'=>$request->item,
-            'item_code'=>$request->item_code,
-            'description'=>$request->description,
-            'price'=>$request->price,
-            'unit'=>$request->unit,
-            'type'=>$request->type,
-            'discount'=>$request->discount,
-            'tax'=>$request->tax,
-            'quantity'=>$request->quantity
+            'item' => $request->item,
+            'item_code' => $request->item_code,
+            'description' => $request->description,
+            'price' => $request->price,
+            'unit' => $request->unit,
+            'type' => $request->type,
+            'discount' => $request->discount,
+            'tax' => $request->tax,
+            'unit_pieces' => $request->unit_pieces,
+            'quantity' => $request->quantity * $request->unit_pieces
         ]);
-        toast('Your Product as been submited!','success');
+        toast('Your Product as been submited!', 'success');
         return redirect()->route('product.index');
-
     }
     public function edit($product)
     {
-      return view('product.edit',compact('product'));
+        return view('product.edit', compact('product'));
     }
     public function update($product, $request)
     {
         $product->update([
-            'item'=>$request->item,
-            'item_code'=>$request->item_code,
-            'description'=>$request->description,
-            'price'=>$request->price,
-            'unit'=>$request->unit,
-            'type'=>$request->type,
-            'discount'=>$request->discount,
-            'tax'=>$request->tax,
-            'quantity'=>$request->quantity
+            'item' => $request->item,
+            'item_code' => $request->item_code,
+            'description' => $request->description,
+            'price' => $request->price,
+            'unit' => $request->unit,
+            'type' => $request->type,
+            'discount' => $request->discount,
+            'tax' => $request->tax,
+            'unit_pieces' => $request->unit_pieces,
+            'quantity' => $request->quantity * $request->unit_pieces
+
         ]);
-        toast('Your Product Updated Successfully!','success');
+        toast('Your Product Updated Successfully!', 'success');
         return redirect()->route('product.index');
     }
     public function delete($product)
     {
         $product->delete();
-        toast('Product Deleted Successfully' , 'success');
+        toast('Product Deleted Successfully', 'success');
         return back();
     }
     public function search($request)
@@ -65,12 +68,9 @@ class ProductRepository implements ProductInterface{
 
         // Perform a search in the database based on the entered text
         $products = Product::where('item_code', 'like', "%$searchText%")
-                            ->get(); // Retrieve only the 'name' column
+            ->get(); // Retrieve only the 'name' column
 
-        // Return the result as JSON
+
         return response()->json($products);
     }
 }
-
-
-?>

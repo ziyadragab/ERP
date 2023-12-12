@@ -21,20 +21,20 @@ class ProductDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         $dataTable = (new EloquentDataTable($query))
-        ->addColumn('action', function (product $product) {
-            return view('product.action', compact('product'));
-        })
+            ->addColumn('action', function (product $product) {
+                return view('product.action', compact('product'));
+            })
 
-        ->editColumn('id', function ($raw) {
-            static $i = 1;
-            return $i++;
-        })
+            ->editColumn('id', function ($raw) {
+                static $i = 1;
+                return $i++;
+            })
 
-        ->editColumn('description', function (product $product) {
-            return view('product.description', compact('product'));
-        });
+            ->editColumn('description', function (product $product) {
+                return view('product.description', compact('product'));
+            });
 
-    return $dataTable->rawColumns(['action', 'id', 'description'])->addIndexColumn();
+        return $dataTable->rawColumns(['action', 'id', 'description'])->addIndexColumn();
     }
 
     /**
@@ -51,20 +51,20 @@ class ProductDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('product-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    //->dom('Bfrtip')
-                    ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+            ->setTableId('product-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            //->dom('Bfrtip')
+            ->orderBy(1)
+            ->selectStyleSingle()
+            ->buttons([
+                Button::make('excel'),
+                Button::make('csv'),
+                Button::make('pdf'),
+                Button::make('print'),
+                Button::make('reset'),
+                Button::make('reload')
+            ]);
     }
 
     /**
@@ -74,11 +74,13 @@ class ProductDataTable extends DataTable
     {
         return [
             ['data' => 'id', 'title' => 'ID', 'name' => 'id'],
+            ['data' => 'item_code', 'title' => 'Item Code', 'name' => 'item_code'],
             ['data' => 'item', 'title' => 'Item', 'name' => ''],
-            ['data'=>'item_code','title'=>'Item Code' , 'name'=>'item_code'],
-            ['data'=>'description','title'=>'Description' , 'name'=>'description'],
+            ['data' => 'description', 'title' => 'Description', 'name' => 'description'],
             ['data' => 'price', 'title' => 'Price', 'name' => 'price'],
             ['data' => 'unit', 'title' => 'Unit', 'name' => 'unit'],
+            ['data' => 'unit_pieces', 'title' => 'Number Of Pieces', 'name' => 'unit_pieces'],
+            ['data' => 'quantity', 'title' => 'Quantity', 'name' => 'quantity'],
             ['data' => 'action', 'title' => 'ACTION', 'name' => 'action', 'searchable' => false, 'printable' => false, 'exportable' => false],
         ];
     }
